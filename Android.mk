@@ -10,6 +10,7 @@ LOCAL_CFLAGS := -Wno-macro-redefined
 LOCAL_C_INCLUDES:= $(LOCAL_PATH)/include
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+LOCAL_CFLAGS += -DUSE_VENDOR_EXTN
 LOCAL_SRC_FILES:= compress.c utils.c
 LOCAL_MODULE := libtinycompress_vendor
 LOCAL_SHARED_LIBRARIES:= libcutils libutils
@@ -35,8 +36,7 @@ LOCAL_CFLAGS := -Wno-macro-redefined
 LOCAL_C_INCLUDES:= $(LOCAL_PATH)/include
 LOCAL_SRC_FILES:= cplay.c
 LOCAL_MODULE := cplay
-LOCAL_SHARED_LIBRARIES:= libcutils libutils libtinycompress
+LOCAL_SHARED_LIBRARIES:= libcutils libutils libtinycompress_vendor
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_EXECUTABLE)
-
